@@ -1,19 +1,18 @@
-import { ChangeEvent, useEffect, useState } from 'react'
+import { ChangeEvent, useState } from 'react'
 import styles  from './home.module.css'
 import { IData } from './interface'
 
 
 
 const App = () : JSX.Element => {
-  const data : IData[] = [
+  const datas : IData[] = [
     {title: 'Mehroj', id : 1, status: 'student'},
     {title: 'Samandar', id : 2, status: 'student'},
     {title: 'Muhammad', id : 3, status: 'student'},
   ]
   const [title, setTitle] = useState<string>()
-  const [arr,setArr] = useState<IData[]>(data)
+  const [arr,setArr] = useState<IData[]>(datas)
   const [edit,setEdit] = useState<number| null>()
-  const [add ,setAdd ] = useState<string | number>('Edit')
  
 
   const handeChange = (e:ChangeEvent<HTMLInputElement>) :void => {
@@ -60,7 +59,7 @@ const App = () : JSX.Element => {
   const editSubmit = (id : number, title : string)  : void => {
     setEdit(id)
     setTitle(title)
-    setAdd('Save')
+
   }
 
   
